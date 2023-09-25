@@ -1,0 +1,29 @@
+﻿<script src="~/js/analysis.js"></script>
+
+<h1>Analysis</h1>
+<div class="btn-group mt-5 mb-3" role="group" aria-label="Basic example">
+    <button type="button" onclick=" generateTransactionCharts()" class="btn btn-primary">All</button>
+    <button type="button" onclick=" generateThisMonthTransactionCharts()" class="btn btn-primary">This Month</button>
+    <button type="button" onclick=" generateThisWeekTransactionCharts()" class="btn btn-primary">This Week</button>
+</div>
+
+<div class="container" >
+    <div>
+        <div class="row justify-content-between">
+            <div class="col-sm-6 container position-relative h-25 w-25">
+                <h3>Income</h3>
+                <canvas id="incomeChartCanvas"></canvas>
+            </div>
+            <div class="col-sm-6 container position-relative h-25 w-25">
+                <h3>Expenses</h3>
+                <canvas id="expensesChartCanvas"></canvas>
+            </div>
+        </div>
+        <div class="mt-5 container position-relative mx-0 h-50 w-100">
+            <h3>Balance</h3>
+            <canvas id="balanceChartCanvas"></canvas>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

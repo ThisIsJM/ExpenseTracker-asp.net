@@ -1,0 +1,34 @@
+﻿@using ExpenseTracker.ViewModels;
+@model RegisterViewModel;
+
+<body>
+    <form class="form-signin" asp-action="Index">
+        <div class="text-center">
+            <h1 class="h3 mb-3 font-weight-normal">Please Register</h1>
+        </div>
+        @if (TempData["Error"] != null)
+        {
+            <div class="col-md-12 alert alert-danger">
+                <span><b>Sorry!</b> - @TempData["Error"] </span>
+            </div>
+        }
+        <label asp-for="EmailAddress" class="sr-only"></label>
+        <input asp-for="EmailAddress" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <span asp-validation-for="EmailAddress" class="text-danger"></span>
+
+        <div class="m-2"></div>
+
+        <label asp-for="Password" class="sr-only"></label>
+        <input asp-for="Password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <span asp-validation-for="Password" class="text-danger"></span>
+
+        
+        <div class="m-2"></div>
+        
+        <label asp-for="ConfirmPassword" class="sr-only">Repeat Password</label>
+        <input asp-for="ConfirmPassword" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+
+        <button class="btn btn-lg btn-primary btn-block mt-3" type="submit">Register</button>
+    </form>
+</body>
